@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const RacketSchema = z.object({
+export const ProductSchema = z.object({
   id: z.number().positive(),
   brand: z.string().min(1),
   name: z.string().min(1),
@@ -10,7 +10,7 @@ export const RacketSchema = z.object({
   updatedAt: z.date(),
 });
 
-export const RacketsSchema = z.array(RacketSchema);
+export const ProductsSchema = z.array(ProductSchema);
 
-export type Racket = z.infer<typeof RacketSchema>;
-export type Rackets = z.infer<typeof RacketsSchema>;
+export type Product = z.infer<typeof ProductSchema>;
+export type Products = z.infer<typeof ProductsSchema>;
