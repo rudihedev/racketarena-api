@@ -1,25 +1,35 @@
 import { prisma } from "../src/lib/prisma";
-import { dataRackets } from "../src/modules/racket/data";
+import { products } from "../src/modules/racket/data";
 
 async function main() {
-  for (const racket of dataRackets) {
-    await prisma.racket.upsert({
-      where: { slug: racket.slug },
+  for (const product of products) {
+    await prisma.product.upsert({
+      where: { slug: product.slug },
       update: {
-        brand: racket.brand,
-        name: racket.name,
-        slug: racket.slug,
-        weight: racket.weight,
+        brand: product.brand,
+        name: product.name,
+        slug: product.slug,
+        weight: product.weight,
+        sku: product.sku,
+        price: product.price,
+        stockQuantity: product.stockQuantity,
+        imageUrl: product.imageUrl,
+        description: product.description,
       },
       create: {
-        brand: racket.brand,
-        name: racket.name,
-        slug: racket.slug,
-        weight: racket.weight,
+        brand: product.brand,
+        name: product.name,
+        slug: product.slug,
+        weight: product.weight,
+        sku: product.sku,
+        price: product.price,
+        stockQuantity: product.stockQuantity,
+        imageUrl: product.imageUrl,
+        description: product.description,
       },
     });
 
-    console.log(`🏸 Racket: ${racket.name}`);
+    console.log(`🏸 Product: ${product.name}`);
   }
 }
 
