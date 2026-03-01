@@ -1,11 +1,11 @@
-## Racketo API
+## Racketarena API
 
 List of badminton rackets API
 
 ## API Documentation
 
 - Local: `http://localhost:3000`
-- Production: `https://racketo.rudihe.com`
+- Production: `https://racketarena-api.rudihe.com`
 
 | Endpoint          | HTTP     | Description       | Available |
 | ----------------- | -------- | ----------------- | --------- |
