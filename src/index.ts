@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { logger } from "hono/logger";
 
-import { racketRoute } from "./modules/racket/route";
+import { racketRoute } from "./modules/products/route";
 import { commonRoute } from "./modules/common/route";
 
 const app = new Hono();
