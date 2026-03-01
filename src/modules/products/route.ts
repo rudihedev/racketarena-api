@@ -1,21 +1,21 @@
 import { Hono } from "hono";
-import { dataRackets } from "./data";
-import { Rackets, RacketSchema } from "./schema";
+import { dataProducts } from "./data";
+import { Products, ProductSchema } from "./schema";
 import { prisma } from "../../lib/prisma";
 
-export const racketRoute = new Hono();
+export const productRoute = new Hono();
 
 // GET list of all rackets
-racketRoute.get("/", async (c) => {
-  const rackets = await prisma.racket.findMany();
-  return c.json(rackets);
+productRoute.get("/", async (c) => {
+  const products = await prisma.product.findMany();
+  return c.json(products);
 });
 
 // GET a racket by slug
-racketRoute.get("/:slug", async (c) => {
+productRoute.get("/:slug", async (c) => {
   const slug = c.req.param("slug");
 
-  const racket = await prisma.racket.findUnique({
+  const racket = await prisma.product.findUnique({
     where: { slug },
   });
 
@@ -23,25 +23,25 @@ racketRoute.get("/:slug", async (c) => {
 });
 
 // ADD new racket data
-racketRoute.post("/", async (c) => {
+productRoute.post("/", async (c) => {
   return c.json({}, 201);
 });
 
 //--- PATCH - Partial update racket by slug
-racketRoute.patch("/:id", async (c) => {
+productRoute.patch("/:id", async (c) => {
   const id = Number(c.req.param("id"));
 
   return c.json({}, 200);
 });
 
 //--- DELETE a racket by slug
-racketRoute.delete("/:id", (c) => {
+productRoute.delete("/:id", (c) => {
   const id = Number(c.req.param("id"));
 
   return c.json({ message: "Racket deleted successfully!" }, 200);
 });
 
 //--- DELETE ALL
-racketRoute.delete("/", (c) => {
+productRoute.delete("/", (c) => {
   return c.json({ message: "All rackets deleted successfully!" }, 200);
 });
