@@ -5,7 +5,7 @@ export const ProductSchema = z.object({
   brand: z.string().min(1),
   name: z.string().min(1),
   slug: z.string().min(1),
-  weight: z.enum(["2U", "3U", "4U", "5U"]),
+  racketWeightU: z.enum(["2U", "3U", "4U", "5U"]),
   createdAt: z.date(),
   updatedAt: z.date(),
 });

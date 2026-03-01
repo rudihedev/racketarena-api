@@ -2,7 +2,6 @@ import { Rackets } from "./schema";
 
 export const products = [
   {
-    id: "ULID001",
     brand: "Yonex",
     name: "Astrox 100 ZZ",
     slug: "astrox-100-zz",
@@ -16,7 +15,6 @@ export const products = [
     updatedAt: new Date(),
   },
   {
-    id: "ULID002",
     brand: "Victor",
     name: "Thruster Ryuga II",
     slug: "thruster-ryuga-ii",
@@ -30,7 +28,6 @@ export const products = [
     updatedAt: new Date(),
   },
   {
-    id: "ULID003",
     brand: "Li-Ning",
     name: "BladeX 900",
     slug: "bladex-900",
@@ -44,7 +41,6 @@ export const products = [
     updatedAt: new Date(),
   },
   {
-    id: "ULID004",
     brand: "Hundred",
     name: "Nitrix Volta 70",
     slug: "nitrix-volta-70",
@@ -58,7 +54,6 @@ export const products = [
     updatedAt: new Date(),
   },
   {
-    id: "ULID005",
     brand: "Apacs",
     name: "Ziggler LHI Pro III",
     slug: "ziggler-lhi-pro-iii",
@@ -72,7 +67,6 @@ export const products = [
     updatedAt: new Date(),
   },
   {
-    id: "ULID006",
     brand: "Yonex",
     name: "Voltage Z-Force II LCW Limited",
     slug: "voltage-z-force-ii-lcw-limited",
@@ -86,7 +80,6 @@ export const products = [
     updatedAt: new Date(),
   },
   {
-    id: "ULID007",
     brand: "Felet",
     name: "Woven 1000",
     slug: "woven-1000",
