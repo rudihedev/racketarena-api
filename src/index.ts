@@ -1,10 +1,11 @@
 import { Hono } from "hono";
 import { logger } from "hono/logger";
+import { OpenAPIHono } from "hono/zod-openapi";
 
 import { racketRoute } from "./modules/products/route";
 import { commonRoute } from "./modules/common/route";
 
-const app = new Hono();
+const app = new OpenAPIHono();
 
 app.use(logger());
 app.route("/", commonRoute);
