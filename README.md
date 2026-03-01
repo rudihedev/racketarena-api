@@ -1,6 +1,6 @@
 ## Racketarena API
 
-- Production: `https://racketarena.rudihe.com`
+- Production: `https://racketarena-api.rudihe.com`
 - Local: `http://localhost:3000`
 
 Priority:
