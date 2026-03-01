@@ -1,0 +1,30 @@
+{
+  "name": "racketo",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun run src/index.ts",
+    "db:gen": "prisma generate",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "db:studio": "prisma studio --browser none",
+    "build": "bun install && bun db:gen",
+    "db:migrate": "prisma migrate dev",
+    "db:reset": "prisma migrate reset",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.2.0",
+    "@prisma/client": "^7.2.0",
+    "dotenv": "^17.2.3",
+    "hono": "^4.10.8",
+    "pg": "^8.16.3",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/pg": "^8.16.0",
+    "prisma": "^7.2.0"
+  }
+}
