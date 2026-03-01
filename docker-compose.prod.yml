@@ -1,6 +1,6 @@
 services:
   backend:
-    image: racketo
+    image: racketarena-api
     build:
       context: .
     ports:
