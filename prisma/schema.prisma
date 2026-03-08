@@ -17,8 +17,9 @@ model Product {
   id String @id @default(ulid())
 
   brand         String @db.VarChar(300)
+  slug          String @unique
   name          String @unique
-  weight        Float?
+  weight        Float? // kg
   racketWeightU String
   sku           String @unique
   price         Int

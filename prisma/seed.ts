@@ -5,28 +5,8 @@ async function main() {
   for (const product of products) {
     await prisma.product.upsert({
       where: { slug: product.slug },
-      update: {
-        brand: product.brand,
-        name: product.name,
-        slug: product.slug,
-        weight: product.weight,
-        sku: product.sku,
-        price: product.price,
-        stockQuantity: product.stockQuantity,
-        imageUrl: product.imageUrl,
-        description: product.description,
-      },
-      create: {
-        brand: product.brand,
-        name: product.name,
-        slug: product.slug,
-        weight: product.weight,
-        sku: product.sku,
-        price: product.price,
-        stockQuantity: product.stockQuantity,
-        imageUrl: product.imageUrl,
-        description: product.description,
-      },
+      update: product,
+      create: product,
     });
 
     console.log(`🏸 Product: ${product.name}`);

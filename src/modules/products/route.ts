@@ -1,6 +1,4 @@
 import { Hono } from "hono";
-import { dataProducts } from "./data";
-import { Products, ProductSchema } from "./schema";
 import { prisma } from "../../lib/prisma";
 
 export const productRoute = new Hono();
