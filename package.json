@@ -10,7 +10,7 @@
     "db:studio": "prisma studio --browser none",
     "build": "bun install && bun db:gen",
     "db:migrate": "prisma migrate dev",
-    "db:reset": "prisma migrate reset",
+    "db:reset": "rm -rf prisma/migrations && prisma migrate reset",
     "db:up": "docker compose up -d",
     "db:down": "docker compose down"
   },

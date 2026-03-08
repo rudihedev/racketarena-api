@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE "Racket" ALTER COLUMN "weight" SET DATA TYPE TEXT;
