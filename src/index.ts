@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { OpenAPIHono } from "@hono/zod-openapi";
 
@@ -7,12 +8,14 @@ import { commonRoute } from "./modules/common/route";
 
 const app = new OpenAPIHono();
 
+app.use(cors());
 app.use(logger());
+
 app.route("/", commonRoute);
 app.route("/products", productRoute);
 
 // TODP: Use Scalar
 
-console.log(process.env);
+// console.log(process.env);
 
 export default app;

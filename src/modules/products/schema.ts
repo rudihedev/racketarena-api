@@ -9,7 +9,7 @@ export const ProductSchema = z.object({
   price: z.int().min(1),
   stockQuantity: z.int().min(1),
   description: z.string().min(1),
-  weight: z.float32().min(10).nullable().optional(),
+  weight: z.float32().min(0.01).nullable().optional(), // kg
   imageUrl: z.url(),
   racketWeightU: z.enum(["2U", "3U", "4U", "5U", "6U"]),
   createdAt: z.date(),
