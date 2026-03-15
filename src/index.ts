@@ -14,7 +14,7 @@ app.use(logger());
 app.route("/", commonRoute);
 app.route("/products", productRoute);
 
-// TODP: Use Scalar
+// TODO: Use Scalar
 
 // console.log(process.env);
 

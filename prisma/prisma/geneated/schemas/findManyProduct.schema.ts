@@ -1,0 +1,45 @@
+import type { Prisma } from '../../../../src/generated/prisma/client';
+import * as z from 'zod';
+import { ProductOrderByWithRelationInputObjectSchema as ProductOrderByWithRelationInputObjectSchema } from './objects/ProductOrderByWithRelationInput.schema';
+import { ProductWhereInputObjectSchema as ProductWhereInputObjectSchema } from './objects/ProductWhereInput.schema';
+import { ProductWhereUniqueInputObjectSchema as ProductWhereUniqueInputObjectSchema } from './objects/ProductWhereUniqueInput.schema';
+import { ProductScalarFieldEnumSchema } from './enums/ProductScalarFieldEnum.schema';
+
+// Select schema needs to be in file to prevent circular imports
+//------------------------------------------------------
+
+export const ProductFindManySelectSchema: z.ZodType<Prisma.ProductSelect> = z.object({
+    id: z.boolean().optional(),
+    slug: z.boolean().optional(),
+    brand: z.boolean().optional(),
+    name: z.boolean().optional(),
+    weight: z.boolean().optional(),
+    racketWeightU: z.boolean().optional(),
+    sku: z.boolean().optional(),
+    price: z.boolean().optional(),
+    stockQuantity: z.boolean().optional(),
+    imageUrl: z.boolean().optional(),
+    description: z.boolean().optional(),
+    createdAt: z.boolean().optional(),
+    updatedAt: z.boolean().optional()
+  }).strict() as unknown as z.ZodType<Prisma.ProductSelect>;
+
+export const ProductFindManySelectZodSchema = z.object({
+    id: z.boolean().optional(),
+    slug: z.boolean().optional(),
+    brand: z.boolean().optional(),
+    name: z.boolean().optional(),
+    weight: z.boolean().optional(),
+    racketWeightU: z.boolean().optional(),
+    sku: z.boolean().optional(),
+    price: z.boolean().optional(),
+    stockQuantity: z.boolean().optional(),
+    imageUrl: z.boolean().optional(),
+    description: z.boolean().optional(),
+    createdAt: z.boolean().optional(),
+    updatedAt: z.boolean().optional()
+  }).strict();
+
+export const ProductFindManySchema: z.ZodType<Prisma.ProductFindManyArgs> = z.object({ select: ProductFindManySelectSchema.optional(),  orderBy: z.union([ProductOrderByWithRelationInputObjectSchema, ProductOrderByWithRelationInputObjectSchema.array()]).optional(), where: ProductWhereInputObjectSchema.optional(), cursor: ProductWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), distinct: z.union([ProductScalarFieldEnumSchema, ProductScalarFieldEnumSchema.array()]).optional() }).strict() as unknown as z.ZodType<Prisma.ProductFindManyArgs>;
+
+export const ProductFindManyZodSchema = z.object({ select: ProductFindManySelectSchema.optional(),  orderBy: z.union([ProductOrderByWithRelationInputObjectSchema, ProductOrderByWithRelationInputObjectSchema.array()]).optional(), where: ProductWhereInputObjectSchema.optional(), cursor: ProductWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), distinct: z.union([ProductScalarFieldEnumSchema, ProductScalarFieldEnumSchema.array()]).optional() }).strict();
