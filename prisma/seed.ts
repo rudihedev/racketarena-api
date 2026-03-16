@@ -1,12 +1,12 @@
 import { prisma } from "../src/lib/prisma";
-import { products } from "../src/modules/products/data";
+import { dataProducts } from "../src/modules/products/data";
 
 async function main() {
-  for (const product of products) {
-    await prisma.product.upsert({
-      where: { slug: product.slug },
-      update: product,
-      create: product,
+  for (const seedProduct of dataProducts) {
+    const product = await prisma.product.upsert({
+      where: { slug: seedProduct.slug },
+      update: seedProduct,
+      create: seedProduct,
     });
 
     console.log(`🏸 Product: ${product.name}`);
@@ -14,11 +14,10 @@ async function main() {
 }
 
 main()
-  .then(async () => {
-    await prisma.$disconnect();
-  })
-  .catch(async (e) => {
-    console.error(e);
-    await prisma.$disconnect();
+  .catch((e) => {
+    console.error("❌ Seed failed:", e);
     process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
   });

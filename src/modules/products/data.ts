@@ -1,10 +1,11 @@
 import { SeedProducts } from "./schema";
 
-export const products: SeedProducts = [
+export const dataProducts: SeedProducts = [
   {
     brand: "Yonex",
     name: "Astrox 100 ZZ",
     slug: "astrox-100-zz",
+    weight: 83,
     racketWeightU: "3U",
     sku: "YON-ASR-001",
     price: 1200000,
@@ -15,11 +16,12 @@ export const products: SeedProducts = [
   },
   {
     brand: "Victor",
-    name: "Thruster Ryuga II",
-    slug: "thruster-ryuga-ii",
+    name: "Thruster Ryuga II Pro",
+    slug: "thruster-ryuga-ii-pro",
+    weight: 80,
     racketWeightU: "4U",
     sku: "VIC-RYU-001",
-    price: 3000000,
+    price: 2800000,
     stockQuantity: 5,
     imageUrl: "https://example.com/images/thruster-ryuga-ii.jpg",
     description:
@@ -29,9 +31,10 @@ export const products: SeedProducts = [
     brand: "Li-Ning",
     name: "BladeX 900",
     slug: "bladex-900",
-    racketWeightU: "2U",
+    weight: 84,
+    racketWeightU: "4U",
     sku: "LIN-BDX-001",
-    price: 2500000,
+    price: 2700000,
     stockQuantity: 7,
     imageUrl: "https://example.com/images/bladex-900.jpg",
     description:
@@ -41,9 +44,10 @@ export const products: SeedProducts = [
     brand: "Hundred",
     name: "Nitrix Volta 70",
     slug: "nitrix-volta-70",
-    racketWeightU: "5U",
+    weight: 89,
+    racketWeightU: "3U",
     sku: "HUN-NVX-001",
-    price: 1500000,
+    price: 2000000,
     stockQuantity: 15,
     imageUrl: "https://example.com/images/nitrix-volta-70.jpg",
     description:
@@ -53,9 +57,10 @@ export const products: SeedProducts = [
     brand: "Apacs",
     name: "Ziggler LHI Pro III",
     slug: "ziggler-lhi-pro-iii",
-    racketWeightU: "3U",
+    weight: 85,
+    racketWeightU: "4U",
     sku: "APA-ZLP-001",
-    price: 800000,
+    price: 1185000,
     stockQuantity: 20,
     imageUrl: "https://example.com/images/ziggler-lhi-pro-iii.jpg",
     description:
@@ -65,9 +70,10 @@ export const products: SeedProducts = [
     brand: "Yonex",
     name: "Voltage Z-Force II LCW Limited",
     slug: "voltage-z-force-ii-lcw-limited",
+    weight: 89,
     racketWeightU: "3U",
     sku: "YON-VZF-001",
-    price: 2000000,
+    price: 3500000,
     stockQuantity: 15,
     imageUrl: "https://example.com/images/voltage-z-force-ii-lcw-limited.jpg",
     description:
@@ -75,14 +81,28 @@ export const products: SeedProducts = [
   },
   {
     brand: "Felet",
-    name: "Woven 1000",
-    slug: "woven-1000",
-    racketWeightU: "4U",
+    name: "Woven 1000 Pro",
+    slug: "woven-1000-pro",
+    weight: 87,
+    racketWeightU: "3U",
     sku: "FEL-WVN-001",
-    price: 1800000,
+    price: 2350000,
     stockQuantity: 10,
     imageUrl: "https://example.com/images/woven-1000.jpg",
     description:
       "The Felet Woven 1000 is a high-quality badminton racket designed for players who value durability and performance. It features a woven carbon fiber construction that provides excellent strength and stability on the court. The racket is equipped with Felet's innovative technologies to enhance shot accuracy and power generation. With its balanced weight distribution and responsive feel, the Woven 1000 offers excellent maneuverability and control, making it an ideal choice for players of all skill levels who want a reliable racket that can withstand intense gameplay.",
+  },
+  {
+    brand: "RS",
+    name: "RS Trainer 145",
+    slug: "rs-trainer-145",
+    weight: 145,
+    racketWeightU: "2U",
+    sku: "RS-TRN-001",
+    price: 550000,
+    stockQuantity: 5,
+    imageUrl: "https://example.com/images/rs-trainer-145.jpg",
+    description:
+      "RS Trainer 145 is a badminton training racket designed to help players improve wrist strength and swing power.",
   },
 ];

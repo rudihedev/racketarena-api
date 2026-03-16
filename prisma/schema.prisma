@@ -19,11 +19,10 @@ datasource db {
 }
 
 model Product {
-  id   String @id @default(ulid())
-  slug String @unique
-
+  id            String @id @default(ulid())
   brand         String @db.VarChar(300)
   name          String @unique
+  slug          String @unique
   weight        Float?
   racketWeightU String
   sku           String @unique
