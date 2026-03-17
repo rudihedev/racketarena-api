@@ -10,7 +10,8 @@ export const dataProducts: SeedProducts = [
     sku: "YON-ASR-001",
     price: 1200000,
     stockQuantity: 10,
-    imageUrl: "https://example.com/images/astrox-100-zz.jpg",
+    imageUrl:
+      "https://4txzmei46w.ucarecd.net/dc1f2884-588d-4731-acde-75e1a9fe40a0/astrox100zz.webp",
     description:
       "The Yonex Astrox 100 ZZ is a high-performance badminton racket designed for aggressive players seeking maximum power and speed. It features a stiff frame and an aerodynamic design that allows for faster swings and explosive smashes. The racket is equipped with Yonex's Namd technology, which enhances the flex and snapback of the shaft for increased power. With its balanced weight distribution and advanced materials, the Astrox 100 ZZ provides excellent control and maneuverability on the court, making it a top choice for competitive players.",
   },
@@ -23,7 +24,8 @@ export const dataProducts: SeedProducts = [
     sku: "VIC-RYU-001",
     price: 2800000,
     stockQuantity: 5,
-    imageUrl: "https://example.com/images/thruster-ryuga-ii.jpg",
+    imageUrl:
+      "https://4txzmei46w.ucarecd.net/dc1f2884-588d-4731-acde-75e1a9fe40a0/thrusterryugaIIpro.webp",
     description:
       "The Victor Thruster Ryuga II is a premium badminton racket designed for players who demand the highest level of performance and precision. It features a unique combination of power and control, making it ideal for aggressive playstyles. The racket is constructed with high-quality materials and incorporates Victor's innovative technologies to enhance swing speed and shot accuracy. With its aerodynamic frame and optimized weight distribution, the Thruster Ryuga II allows players to generate powerful smashes while maintaining excellent maneuverability on the court. This racket is perfect for advanced players looking to elevate their game to the next level.",
   },
@@ -36,7 +38,8 @@ export const dataProducts: SeedProducts = [
     sku: "LIN-BDX-001",
     price: 2700000,
     stockQuantity: 7,
-    imageUrl: "https://example.com/images/bladex-900.jpg",
+    imageUrl:
+      "https://4txzmei46w.ucarecd.net/d01f15fb-0bb1-4406-a4cd-5203f97696a3/bladex900.jpg",
     description:
       "The Li-Ning BladeX 900 is a high-end badminton racket designed for players who prioritize speed and agility on the court. It features a lightweight construction and a slim frame that allows for quick swings and rapid shot execution. The racket is equipped with Li-Ning's advanced technologies, including Aerotec Beam System for improved aerodynamics and Turbo Charging Technology for enhanced power generation. With its balanced weight distribution and responsive feel, the BladeX 900 provides excellent control and precision, making it an ideal choice for players who rely on fast-paced gameplay and quick reflexes.",
   },
