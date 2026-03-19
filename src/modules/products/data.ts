@@ -9,7 +9,7 @@ export const dataProducts: SeedProducts = [
     racketWeightU: "3U",
     sku: "YON-ASR-001",
     price: 1200000,
-    stockQuantity: 10,
+    stockQuantity: 3,
     imageUrl:
       "https://4txzmei46w.ucarecd.net/dc1f2884-588d-4731-acde-75e1a9fe40a0/astrox100zz.webp",
     description:
@@ -52,7 +52,8 @@ export const dataProducts: SeedProducts = [
     sku: "HUN-NVX-001",
     price: 2000000,
     stockQuantity: 15,
-    imageUrl: "https://example.com/images/nitrix-volta-70.jpg",
+    imageUrl:
+      "https://4txzmei46w.ucarecd.net/dc1f2884-588d-4731-acde-75e1a9fe40a0/astrox100zz.webp",
     description:
       "The Hundred Nitrix Volta 70 is a versatile badminton racket designed for players who seek a balance of power and control. It features a medium flex shaft and a well-balanced frame that allows for smooth swings and precise shot placement. The racket is constructed with high-quality materials and incorporates The Hundred's innovative technologies to enhance performance on the court. With its aerodynamic design and optimized weight distribution, the Nitrix Volta 70 provides excellent maneuverability and responsiveness, making it suitable for players of all skill levels who want to improve their game.",
   },
@@ -65,7 +66,8 @@ export const dataProducts: SeedProducts = [
     sku: "APA-ZLP-001",
     price: 1185000,
     stockQuantity: 20,
-    imageUrl: "https://example.com/images/ziggler-lhi-pro-iii.jpg",
+    imageUrl:
+      "https://4txzmei46w.ucarecd.net/7b8bd1f0-734f-43da-bde9-0878b5d2919d/zigglerlhiproiii.jpg",
     description:
       "The Apacs Ziggler LHI Pro III is a high-performance badminton racket designed for players who seek a combination of power and control. It features a stiff frame and an aerodynamic design that allows for faster swings and explosive smashes. The racket is equipped with Apacs' innovative technologies to enhance shot accuracy and power generation. With its balanced weight distribution and responsive feel, the Ziggler LHI Pro III provides excellent maneuverability on the court, making it an ideal choice for aggressive players looking to dominate their opponents.",
   },
@@ -78,7 +80,8 @@ export const dataProducts: SeedProducts = [
     sku: "YON-VZF-001",
     price: 3500000,
     stockQuantity: 15,
-    imageUrl: "https://example.com/images/voltage-z-force-ii-lcw-limited.jpg",
+    imageUrl:
+      "https://4txzmei46w.ucarecd.net/9279faf1-964f-46a7-847e-d30127f11035/voltagezforceiilcwlimited.jpg",
     description:
       "The Yonex Voltage Z-Force II LCW Limited is a special edition badminton racket designed in collaboration with legendary player Lee Chong Wei. It features a unique design and color scheme inspired by Lee Chong Wei's playing style and achievements. The racket is built with high-quality materials and incorporates Yonex's advanced technologies to enhance performance on the court. With its aerodynamic frame and optimized weight distribution, the Voltage Z-Force II LCW Limited provides excellent power and control, making it a must-have for fans of Lee Chong Wei and players looking to elevate their game with a limited edition racket.",
   },
@@ -91,7 +94,8 @@ export const dataProducts: SeedProducts = [
     sku: "FEL-WVN-001",
     price: 2350000,
     stockQuantity: 10,
-    imageUrl: "https://example.com/images/woven-1000.jpg",
+    imageUrl:
+      "https://4txzmei46w.ucarecd.net/45f6ed5d-dc8a-4b0f-a528-701226a20b5d/woven1000pro.jpg",
     description:
       "The Felet Woven 1000 is a high-quality badminton racket designed for players who value durability and performance. It features a woven carbon fiber construction that provides excellent strength and stability on the court. The racket is equipped with Felet's innovative technologies to enhance shot accuracy and power generation. With its balanced weight distribution and responsive feel, the Woven 1000 offers excellent maneuverability and control, making it an ideal choice for players of all skill levels who want a reliable racket that can withstand intense gameplay.",
   },
@@ -104,7 +108,8 @@ export const dataProducts: SeedProducts = [
     sku: "RS-TRN-001",
     price: 550000,
     stockQuantity: 5,
-    imageUrl: "https://example.com/images/rs-trainer-145.jpg",
+    imageUrl:
+      "https://4txzmei46w.ucarecd.net/b101d068-1aa7-4902-b7c4-df2cda0806b2/rstrainer145.jpg",
     description:
       "RS Trainer 145 is a badminton training racket designed to help players improve wrist strength and swing power.",
   },
