@@ -1,7 +1,7 @@
 import { createRoute, OpenAPIHono } from "@hono/zod-openapi";
 
 import { prisma } from "../../lib/prisma";
-import { UsersSchema } from "./schema";
+import { UserSchema } from "./schema";
 
 export const userRoute = new OpenAPIHono();
 
@@ -11,13 +11,13 @@ userRoute.openapi(
     path: "/",
     responses: {
       200: {
-        content: { "application/json": { schema: UsersSchema } },
+        content: { "application/json": { schema: UserSchema } },
         description: "Get all users",
       },
     },
   }),
   async (c) => {
-    const users = await prisma.user.findMany();
-    return c.json(users);
+    const user = await prisma.user.findMany();
+    return c.json(user);
   },
 );
