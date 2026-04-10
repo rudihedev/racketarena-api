@@ -39,6 +39,6 @@ authRoute.openapi(
       },
     });
 
-    return c.json(user);
+    return c.json(newUser);
   },
 );
