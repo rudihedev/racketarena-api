@@ -24,9 +24,20 @@ authRoute.openapi(
     },
   }),
   async (c) => {
-    const user = await prisma.user.findFirst();
-
     const validatedBody = c.req.valid("json");
+
+    const newUser = await prisma.user.create({
+      data: {
+        username: validatedBody.username,
+        email: validatedBody.email,
+        name: validatedBody.name,
+        password: {
+          create: {
+            hash: validatedBody.password,
+          },
+        },
+      },
+    });
 
     return c.json(user);
   },
