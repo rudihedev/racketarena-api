@@ -50,6 +50,12 @@ export const checkAuthMiddleware = factory.createMiddleware(async (c, next) => {
     await next();
   } catch (error) {
     console.error("Authentication error:", error);
-    return c.json({ message: "Failed to check authorized user!" }, 401);
+    return c.json(
+      {
+        message: "Failed to check authorized user!",
+        error,
+      },
+      401,
+    );
   }
 });
