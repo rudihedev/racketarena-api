@@ -16,7 +16,12 @@ export const LoginUserSchema = RegisterUserSchema.omit({
 
 export const LoginResponseSchema = {
   token: z.string(),
-  user: UserSchema,
+  user: UserSchema.pick({
+    id: true,
+    username: true,
+    email: true,
+    name: true,
+  }),
 };
 
 export type RegisterUser = z.infer<typeof RegisterUserSchema>;
