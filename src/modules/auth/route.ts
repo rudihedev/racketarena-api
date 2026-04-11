@@ -93,6 +93,29 @@ authRoute.openapi(
         },
       });
 
+      if (!existingUser?.password) {
+        return c.json(
+          {
+            message: "Failed to login. User has no password.",
+          },
+          400,
+        );
+      }
+
+      const isPasswordVerified = await verifyPassword(
+        existingUser?.password.hash,
+        validatedBody.password,
+      );
+
+      if (!isPasswordVerified) {
+        return c.json(
+          {
+            message: "Failed to login. Invalid password.",
+          },
+          400,
+        );
+      }
+
       return c.json({
         token: "",
         user: existingUser,
