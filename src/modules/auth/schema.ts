@@ -9,4 +9,16 @@ export const RegisterUserSchema = UserSchema.omit({
   password: z.string().openapi({ example: "example" }),
 });
 
+export const LoginUserSchema = RegisterUserSchema.omit({
+  username: true,
+  name: true,
+});
+
+export const LoginResponseSchema = {
+  token: z.string(),
+  user: UserSchema,
+};
+
 export type RegisterUser = z.infer<typeof RegisterUserSchema>;
+export type LoginUser = z.infer<typeof LoginUserSchema>;
+export type LoginResponse = z.infer<typeof LoginResponseSchema>;
