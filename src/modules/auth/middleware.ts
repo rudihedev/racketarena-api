@@ -4,11 +4,13 @@ import { UserSchema } from "../user/schema";
 import { verifyToken } from "../../lib/token";
 import { prisma } from "../../lib/prisma";
 
-export const AuthMiddlewareEnvSchema = z.oobject({
+export const AuthMiddlewareEnvSchema = z.object({
   Variables: z.object({
     user: UserSchema,
   }),
 });
+
+type AuthMiddlewareEnv = z.infer<typeof AuthMiddlewareEnvSchema>;
 
 const factory = createFactory<AuthMiddlewareEnv>();
 
@@ -33,10 +35,10 @@ export const checkAuthMiddleware = factory.createMiddleware(async (c, next) => {
     const userId = payload.sub;
 
     if (!payload.sub || typeof payload.sub != "string") {
-      return c.json({ message: "User ID is invalid" }, 401);
+      return c.json({ message: "Token user ID is invalid" }, 401);
     }
 
-    const user = await db.user.findUnique({
+    const user = await prisma.user.findUnique({
       where: { id: payload.sub },
     });
     if (!user) {
