@@ -5,6 +5,7 @@ export { UserModelSchema };
 
 export const UserSchema = UserModelSchema.omit({
   password: true,
+  passwordId: true,
 }).extend({
   username: z.string().openapi({ example: "example" }),
   email: z.string().openapi({ example: "example@example.com" }),
