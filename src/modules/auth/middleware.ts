@@ -40,6 +40,9 @@ export const checkAuthMiddleware = factory.createMiddleware(async (c, next) => {
 
     const user = await prisma.user.findUnique({
       where: { id: payload.sub },
+      omit: {
+        passwordId: true,
+      },
     });
     if (!user) {
       return c.json({ message: "User is no longer available" }, 401);

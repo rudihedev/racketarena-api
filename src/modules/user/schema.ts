@@ -4,6 +4,7 @@ import { UserModelSchema } from "../../generated/zod/schemas";
 export { UserModelSchema };
 
 export const UserSchema = UserModelSchema.omit({
+  passwordId: true,
   password: true,
 }).extend({
   username: z.string().openapi({ example: "example" }),

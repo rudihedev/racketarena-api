@@ -19,9 +19,11 @@ userRoute.openapi(
   async (c) => {
     const users = await prisma.user.findMany({
       omit: {
+        passwordId: true,
         email: true,
       },
     });
+    console.log("Users data:", JSON.stringify(users, null, 2)); // ← cek ini
     return c.json(users);
   },
 );

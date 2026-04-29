@@ -45,6 +45,9 @@ authRoute.openapi(
             },
           },
         },
+        omit: {
+          passwordId: true,
+        },
       });
 
       return c.json(newUser);
