@@ -79,6 +79,9 @@ authRoute.openapi(
       400: {
         description: "Failed to login user",
       },
+      404: {
+        description: "User not found",
+      },
     },
   }),
   async (c) => {
@@ -98,12 +101,17 @@ authRoute.openapi(
         },
       });
 
+      if (!existingUser) {
+        return c.json(
+          { message: "User not found. Please register first." },
+          404,
+        );
+      }
+
       if (!existingUser?.password) {
         return c.json(
-          {
-            message: "Failed to login. User has no password.",
-          },
-          400,
+          { message: "User not found. Please register first." },
+          404,
         );
       }
 

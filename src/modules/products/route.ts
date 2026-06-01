@@ -1,8 +1,8 @@
 import { createRoute, OpenAPIHono } from "@hono/zod-openapi";
+import z from "zod";
 
-import { dataProducts } from "./data";
 import { prisma } from "../../lib/prisma";
-import { ProductsSchema } from "./schema";
+import { ProductsSchema, ProductSchema } from "./schema";
 
 export const productRoute = new OpenAPIHono();
 
@@ -23,19 +23,37 @@ productRoute.openapi(
   },
 );
 
-// GET list of all products
-// productRoute.get("/", async (c) => {
-//   const products = await prisma.product.findMany();
-//   return c.json(products);
-// });
+productRoute.openapi(
+  createRoute({
+    method: "get",
+    path: "/{slug}",
+    request: {
+      params: z.object({ slug: z.string() }),
+    },
+    responses: {
+      200: {
+        content: { "application/json": { schema: ProductSchema } },
+        description: "Product detail by slug",
+      },
+      404: {
+        content: {
+          "application/json": {
+            schema: z.object({ message: z.string() }),
+          },
+        },
+        description: "Product not found",
+      },
+    },
+  }),
+  async (c) => {
+    const { slug } = c.req.valid("param");
 
-// // GET a racket by slug
-// productRoute.get("/:slug", async (c) => {
-//   const slug = c.req.param("slug");
+    const product = await prisma.product.findUnique({ where: { slug } });
 
-//   const product = await prisma.product.findUnique({
-//     where: { slug },
-//   });
+    if (!product) {
+      return c.json({ message: "Product not found" } as const, 404);
+    }
 
-//   return c.json({ product });
-// });
+    return c.json(product, 200);
+  },
+);

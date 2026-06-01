@@ -31,6 +31,8 @@ model Product {
   imageUrl      String
   description   String
 
+  cartItems CartItem[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
 }
@@ -42,7 +44,8 @@ model User {
   name     String
   email    String @unique
 
-  password Password? @relation(fields: [passwordId], references: [id])
+  password  Password?  @relation(fields: [passwordId], references: [id])
+  cartItems CartItem[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
@@ -59,4 +62,20 @@ model Password {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
+}
+
+model CartItem {
+  id       String @id @default(ulid())
+  quantity Int
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  @@unique([userId, productId])
 }
