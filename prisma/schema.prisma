@@ -38,6 +38,7 @@ model User {
   updatedAt  DateTime   @default(now()) @updatedAt
   passwordId String?
   cartItems  CartItem[]
+  orders     Order[]
   password   Password?  @relation(fields: [passwordId], references: [id])
 }
 
@@ -60,4 +61,36 @@ model CartItem {
   user      User     @relation(fields: [userId], references: [id])
 
   @@unique([userId, productId])
+}
+
+model Order {
+  id            String      @id @default(ulid())
+  userId        String
+  user          User        @relation(fields: [userId], references: [id])
+  items         OrderItem[]
+  totalAmount   Int
+  shippingCost  Int         @default(50000)
+  paymentMethod String
+  status        String      @default("pending")
+  name          String
+  phone         String
+  address       String
+  city          String
+  postalCode    String
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @default(now()) @updatedAt
+}
+
+model OrderItem {
+  id           String   @id @default(ulid())
+  orderId      String
+  order        Order    @relation(fields: [orderId], references: [id])
+  productId    String
+  productName  String
+  productBrand String
+  imageUrl     String
+  price        Int
+  quantity     Int
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @default(now()) @updatedAt
 }

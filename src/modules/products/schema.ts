@@ -11,6 +11,7 @@ export const SeedProductSchema = ProductSchema.omit({
   id: true,
   createdAt: true,
   updatedAt: true,
+  cartItems: true,
 });
 
 export const SeedProductsSchema = SeedProductSchema.array();

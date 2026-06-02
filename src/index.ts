@@ -8,6 +8,7 @@ import { commonRoute } from "./modules/common/route";
 import { userRoute } from "./modules/user/route";
 import { authRoute } from "./modules/auth/route";
 import { cartRoute } from "./modules/cart/route";
+import { orderRoute } from "./modules/orders/route";
 
 const app = new OpenAPIHono();
 
@@ -19,8 +20,8 @@ app.route("/products", productRoute);
 app.route("/users", userRoute);
 app.route("/auth", authRoute);
 app.route("/cart", cartRoute);
+app.route("/orders", orderRoute);
 
-// The OpenAPI documentation will be available at /doc
 app.doc("/openapi.json", {
   openapi: "3.0.0",
   info: {

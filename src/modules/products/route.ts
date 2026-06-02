@@ -18,7 +18,9 @@ productRoute.openapi(
     },
   }),
   async (c) => {
-    const products = await prisma.product.findMany();
+    const products = await prisma.product.findMany({
+      orderBy: { createdAt: "asc" },
+    });
     return c.json(products);
   },
 );

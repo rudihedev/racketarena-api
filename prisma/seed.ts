@@ -5,7 +5,7 @@ async function main() {
   for (const seedProduct of dataProducts) {
     const product = await prisma.product.upsert({
       where: { slug: seedProduct.slug },
-      update: seedProduct,
+      update: {},
       create: seedProduct,
     });
 
